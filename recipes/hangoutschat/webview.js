@@ -1,3 +1,9 @@
+const _path = _interopRequireDefault(require('path'));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
 module.exports = Ferdium => {
   // class corresponding to the red badge that is visible for direct messages
   const directMessageSelector = 'div.V6.CL.su.ahD.X9.Y2 span.akt span.XU';
@@ -28,6 +34,8 @@ module.exports = Ferdium => {
   };
 
   Ferdium.loop(getMessages);
+
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 
   document.addEventListener('click', e => {
     // @ts-ignore

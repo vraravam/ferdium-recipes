@@ -1,5 +1,11 @@
+const _path = _interopRequireDefault(require('path'));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
 module.exports = Ferdium => {
-  function getTasks() {
+  const getMessages = () => {
     let incompleteCount = 0;
 
     const countEls = document.querySelectorAll(
@@ -15,5 +21,7 @@ module.exports = Ferdium => {
     Ferdium.setBadge(incompleteCount);
   }
 
-  Ferdium.loop(getTasks);
+  Ferdium.loop(getMessages);
+
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 };

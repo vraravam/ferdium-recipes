@@ -1,3 +1,9 @@
+const _path = _interopRequireDefault(require('path'));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
 module.exports = (Ferdium, options) => {
   const getMessages = () => {
     let messages = 0;
@@ -11,6 +17,8 @@ module.exports = (Ferdium, options) => {
   };
 
   Ferdium.loop(getMessages);
+
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 
   setTimeout(() => {
     if (document.body && !document.body.classList.contains('UIPage_LoggedOut')) {

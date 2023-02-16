@@ -35,6 +35,7 @@ module.exports = Ferdium => {
   Ferdium.loop(getMessages);
 
   Ferdium.injectCSS(_path.default.join(__dirname, 'workplace.css'));
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 
   localStorage._cs_desktopNotifsEnabled = JSON.stringify({
     __t: Date.now(),

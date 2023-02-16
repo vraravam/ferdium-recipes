@@ -61,7 +61,7 @@ module.exports = (Ferdium) => {
 	 * @since       1.0.0
 	 * @return      {void}
 	 */
-	function getMessages() {
+	const getMessages = () => {
 		let mine = '';
 		let unassigned = '';
 		let total = '0';

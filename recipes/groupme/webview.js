@@ -1,6 +1,11 @@
+const _path = _interopRequireDefault(require('path'));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
 module.exports = Ferdium => {
   const getMessages = () => {
-
     // array-ify the list of conversations
     const allConversations = [...document.querySelectorAll('#tray .tray-list .list-item')]
     // for each conversation on the list...
@@ -15,4 +20,6 @@ module.exports = Ferdium => {
   };
 
   Ferdium.loop(getMessages);
+
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 };

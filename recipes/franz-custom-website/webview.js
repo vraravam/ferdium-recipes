@@ -27,4 +27,6 @@ module.exports = (Ferdium, settings) => {
       }
     }
   }, true);
+
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 };

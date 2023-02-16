@@ -1,3 +1,9 @@
+const _path = _interopRequireDefault(require('path'));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
 const titleRegex = /^\((\d+)\)/;
 
 const getJson = async relativeUri => {
@@ -150,6 +156,8 @@ module.exports = Ferdium => {
     }
     Ferdium.setBadge(directCount);
   };
+
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 
   getInstanceLogo().then(
     ({ logo, logoMask }) => {

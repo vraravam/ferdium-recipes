@@ -1,4 +1,10 @@
-module.exports = (Ferdium) => {
+const _path = _interopRequireDefault(require('path'));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+module.exports = Ferdium => {
   const getMessages = () => {
     // get new conversations in My Queue
     const myQueue = $('.super-nav a.super-nav__item.js-from-super-to-nav[href^="/chat/box:my"] .count').not('.count--gray').text();
@@ -13,4 +19,6 @@ module.exports = (Ferdium) => {
   };
 
   Ferdium.loop(getMessages);
+
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 };

@@ -1,3 +1,9 @@
+const _path = _interopRequireDefault(require('path'));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
 setTimeout(() => {
   const elem = document.querySelector('#af-error-container');
 
@@ -34,9 +40,7 @@ module.exports = (Ferdium, settings) => {
 
   Ferdium.loop(getMessages);
 
-  if (settings.isDarkModeEnabled) {
-    localStorage.setItem('dark_mode_enabled', 'true');
-  } else {
-    localStorage.setItem('dark_mode_enabled', 'false');
-  }
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
+
+  localStorage.setItem('dark_mode_enabled', settings.isDarkModeEnabled ? 'true' : 'false');
 };

@@ -1,3 +1,9 @@
+const _path = _interopRequireDefault(require('path'));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
 module.exports = Ferdium => {
   const getMessages = () => {
     const events = document.querySelectorAll(".today")[0].querySelectorAll('.list')[0].querySelectorAll('.task-list')[0].querySelectorAll('.event-section')[0].querySelectorAll('.droppable')[0].children[0].childElementCount
@@ -5,6 +11,8 @@ module.exports = Ferdium => {
 
     Ferdium.setBadge(events + tasks);
   };
+
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 
   Ferdium.loop(getMessages);
 }

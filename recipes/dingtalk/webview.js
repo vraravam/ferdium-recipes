@@ -40,4 +40,5 @@ module.exports = Ferdium => {
   Ferdium.loop(getMessages);
 
   Ferdium.injectCSS(_path.default.join(__dirname, 'style.css'));
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 };

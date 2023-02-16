@@ -1,3 +1,9 @@
+const _path = _interopRequireDefault(require('path'));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
 module.exports = Ferdium => {
   const DIRECT_MESSAGES_INDIVIDUAL = '#sidebar-left .unread-title .DirectChannel__profile-picture';
   const DIRECT_MESSAGES_GROUP = '#sidebar-left .unread-title .status--group';
@@ -19,4 +25,6 @@ module.exports = Ferdium => {
   };
 
   Ferdium.loop(getMessages);
+
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 };

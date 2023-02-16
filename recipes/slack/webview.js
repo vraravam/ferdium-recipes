@@ -35,7 +35,7 @@ module.exports = Ferdium => {
 
   Ferdium.loop(loopFunc);
 
-  const getTeamIcon = function getTeamIcon(count = 0) {
+  const getTeamIcon = (count = 0) => {
     let countTeamIconCheck = count;
     let bgUrl = null;
     const teamMenu = document.querySelector(

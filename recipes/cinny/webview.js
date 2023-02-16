@@ -1,5 +1,11 @@
+const _path = _interopRequireDefault(require('path'));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
 module.exports = Ferdium => {
-  function getMessages() {
+  const getMessages = () => {
     // Number of messages from rooms which has "All Messages" notifications enabled or when mentionned in a room with "Mentions & Keyword" notifications level.
     let directCount = 0;
     // Number of messages for rooms which has "Mentions & Keyword" notifications level set which does not directly mention you.
@@ -19,4 +25,6 @@ module.exports = Ferdium => {
     Ferdium.setBadge(directCount, indirectCount);
   }
   Ferdium.loop(getMessages);
+
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 };

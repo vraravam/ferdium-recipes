@@ -12,4 +12,5 @@ module.exports = (Ferdium) => {
   Ferdium.loop(getMessages);
 
   Ferdium.injectCSS(_path.default.join(__dirname, 'css', 'franz.css'));
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 };

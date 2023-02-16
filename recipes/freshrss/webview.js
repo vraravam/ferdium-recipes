@@ -1,7 +1,11 @@
-"use strict";
+const _path = _interopRequireDefault(require('path'));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 module.exports = Ferdium => {
-  const getMessages = function getMessages() {
+  const getMessages = () => {
     // Initialize empty vars
     var unread = 0;
     var match = [];
@@ -17,9 +21,7 @@ module.exports = Ferdium => {
     Ferdium.setBadge(Number.parseInt(unread, 10));
   };
 
-  const loopFunc = () => {
-    getMessages();
-  };
+  Ferdium.loop(getMessages);
 
-  Ferdium.loop(loopFunc);
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 };

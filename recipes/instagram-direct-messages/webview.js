@@ -1,5 +1,3 @@
-"use strict";
-
 const _path = _interopRequireDefault(require('path'));
 
 function _interopRequireDefault(obj) {

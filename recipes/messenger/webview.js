@@ -1,3 +1,9 @@
+const _path = _interopRequireDefault(require('path'));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
 function hideInstallMessage() {
   const installMessage = document.querySelector('.usczdcwk');
   if (installMessage) {
@@ -41,8 +47,8 @@ module.exports = Ferdium => {
         .reduce((prev, curr) => prev + curr, 0);
 
       /*
-        * add count of message requests on top of notification counter
-        */
+       * add count of message requests on top of notification counter
+       */
       const messageRequestsElement = document.querySelector('._5nxf');
       if (messageRequestsElement) {
         count += Ferdium.safeParseInt(messageRequestsElement.textContent);
@@ -58,6 +64,8 @@ module.exports = Ferdium => {
   };
 
   Ferdium.loop(loopRoutine);
+
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 
   localStorage.setItem(
     '_cs_desktopNotifsEnabled',

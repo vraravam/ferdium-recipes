@@ -68,4 +68,5 @@ module.exports = Ferdium => {
   });
 
   Ferdium.injectCSS(_path.default.join(__dirname, 'css', 'modal.css'));
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 };

@@ -1,3 +1,8 @@
+const _path = _interopRequireDefault(require('path'));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 module.exports = Ferdium => {
   const getMessages = () => {
@@ -18,7 +23,7 @@ module.exports = Ferdium => {
 
   Ferdium.loop(getMessages);
 
-  const getTeamIcon = function getTeamIcon() {
+  const getTeamIcon = () => {
     const manifestElement = document.querySelector('link[rel="manifest"]');
 
     if (manifestElement == null) {
@@ -52,4 +57,6 @@ module.exports = Ferdium => {
   setTimeout(() => {
     getTeamIcon();
   }, 4000);
+
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 };

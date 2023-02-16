@@ -4,4 +4,5 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 module.exports = (Ferdium) => {
   Ferdium.injectCSS(_path.default.join(__dirname, 'css', 'franz.css'));
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 };

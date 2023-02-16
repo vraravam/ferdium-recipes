@@ -1,5 +1,11 @@
+const _path = _interopRequireDefault(require('path'));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
 module.exports = Ferdium => {
-  function getMessages() {
+  const getMessages = () => {
     const matches = document.querySelector('title').textContent
       .match('(?<=\\[)\\d+(?=])');
     const directCount = Ferdium.safeParseInt(matches !== null ? matches[0] : 0);
@@ -10,4 +16,6 @@ module.exports = Ferdium => {
   }
 
   Ferdium.loop(getMessages);
+
+  Ferdium.injectCSS(_path.default.join(__dirname, 'service.css'));
 };

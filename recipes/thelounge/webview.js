@@ -1,4 +1,3 @@
-
 function countsOfUnreadMessagesAfterMarker(unreadMarker) {
   var children = unreadMarker.parentElement.childNodes;
   var unread = 0;

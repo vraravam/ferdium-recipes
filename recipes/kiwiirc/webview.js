@@ -5,7 +5,7 @@ function _interopRequireDefault(obj) {
 }
 
 module.exports = Ferdium => {
-  const getMessages = function getMessages() {
+  const getMessages = () => {
     // eslint-disable-next-line no-undef
     const unreadChannelsCount = kiwi.state.networks.reduce((count, network) => {
       return (count += network.buffers.filter(buffer => {
